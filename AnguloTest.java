@@ -39,6 +39,19 @@ public class AnguloTest
 
 
     @Test
+    public void deberiaPasar(){
+        assertTrue(true);
+    }
+    @Test
+    public void deberiaFallar(){
+        assertFalse(true);
+    }
+    @Test
+    public void deberiaErrar(){
+        int[] number = new int[]{0};
+        assertTrue(number[2] < 3);        
+    }
+    @Test
     public void deberiaCrearBienLosAngulo() {
         assertTrue (a0.equals(a0));
         assertTrue (a0.equals(new Angulo(0,Angulo.GRADOS)));
