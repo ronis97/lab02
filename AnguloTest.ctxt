@@ -4,7 +4,6 @@ comment0.text=\r\n\ The\ test\ class\ AnguloTest.\r\n\r\n\ @author\ \ Juan\ Albo
 comment1.params=
 comment1.target=void\ setUp()
 comment1.text=\r\n\ Sets\ up\ the\ test\ fixture.\r\n\r\n\ Called\ before\ every\ test\ case\ method.\r\n
-<<<<<<< HEAD
 comment10.params=
 comment10.target=void\ deberiaRestar()
 comment11.params=
@@ -12,8 +11,6 @@ comment11.target=void\ deberiaMultiplicar()
 comment12.params=
 comment12.target=void\ tearDown()
 comment12.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ every\ test\ case\ method.\r\n
-=======
->>>>>>> c403c1eedece9d482ff055138696687993451747
 comment2.params=
 comment2.target=void\ deberiaPasar()
 comment3.params=
@@ -29,11 +26,5 @@ comment7.target=void\ deberiaDarElValorEnRadianes()
 comment8.params=
 comment8.target=void\ deberiaDarElValorEnGradianes()
 comment9.params=
-<<<<<<< HEAD
 comment9.target=void\ deberiaSumar()
 numComments=13
-=======
-comment9.target=void\ tearDown()
-comment9.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ every\ test\ case\ method.\r\n
-numComments=10
->>>>>>> c403c1eedece9d482ff055138696687993451747

@@ -1,3 +1,4 @@
+import java.lang.Math;
 /**
  * Esta clase sirve para manejar angulos. 
  * La medida de los ángulos podrá especificarse en grados, radianes, o gradianes 
@@ -14,21 +15,20 @@ public class Angulo {
     public static final int GRADOS = 1;
     /** Constantes para indicar que el argumento está en gradianes */
     public static final int GRADIANES = 2;
-
     /** Constante para maximo error admitido al comparar dos angulos.  
      *  Recuerde que los cálculos en el computador con variables de plunto flotante
      *  tienen una precisión limitada, y se requiere un margen de tolerancia
-     */
-    
-    
+     */    
     public static final double MAXERROR = 0.00000000000001;
-  
-
+    private double valor;
+    private int tipo;
     /** Crea un angulo a partir del valor dado en grados o en radianes
      * @param valor el valor de medida del angulo
      * @param tipo Tipo de medida del angulo: puede ser GRADOS, RADIANES, GRADIANES
      */
     public Angulo (double valor, int tipo){
+        this.valor = valor;
+        this.tipo = tipo;
     }
     
     /**Valor del angulo en grados
@@ -105,6 +105,14 @@ public class Angulo {
      * @return |this - a| < MAXERROR
      */
     public boolean equals (Angulo a) {
+        if (this.tipo == a.tipo){
+            if (tipo == 1){
+                if (a.valor >= 360) return true;
+                else if(a.valor == 0) return true;
+                else if(a.valor == 720) return true;
+            }
+            return Math.abs(this.valor-a.valor) < MAXERROR;
+        }
         return false;
     }
     
