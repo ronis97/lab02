@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=AnguloTest
-comment0.text=\n\ The\ test\ class\ AnguloTest.\n\n\ @author\ \ Juan\ Albornoz\ -\ ECI\n\ @version\ 2012-1\n
+comment0.text=\r\n\ The\ test\ class\ AnguloTest.\r\n\r\n\ @author\ \ Juan\ Albornoz\ -\ ECI\r\n\ @version\ 2012-1\r\n
 comment1.params=
 comment1.target=void\ setUp()
-comment1.text=\n\ Sets\ up\ the\ test\ fixture.\n\n\ Called\ before\ every\ test\ case\ method.\n
+comment1.text=\r\n\ Sets\ up\ the\ test\ fixture.\r\n\r\n\ Called\ before\ every\ test\ case\ method.\r\n
 comment2.params=
 comment2.target=void\ deberiaCrearBienLosAngulo()
 comment3.params=
@@ -20,5 +20,5 @@ comment8.params=
 comment8.target=void\ deberiaMultiplicar()
 comment9.params=
 comment9.target=void\ tearDown()
-comment9.text=\n\ Tears\ down\ the\ test\ fixture.\n\n\ Called\ after\ every\ test\ case\ method.\n
+comment9.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ every\ test\ case\ method.\r\n
 numComments=10

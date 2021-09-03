@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=CalVectorial
-comment0.text=\ Calculadora.java\n\ Representa\ una\ calculadora\ de\ vectores\ \n\ @author\ ESCUELA\ 2017-02\ v01\ 2121-02\ v02\n
+comment0.text=\ Calculadora.java\r\n\ Representa\ una\ calculadora\ de\ vectores\ \r\n\ @author\ ESCUELA\ 2017-02\ v01\ 2121-02\ v02\r\n
 comment1.params=
 comment1.target=CalVectorial()
 comment2.params=nombre
