@@ -60,13 +60,13 @@ public class AnguloTest
         assertTrue (a0.equals(a720));
         assertTrue (a720.equals(a0));
         assertTrue (aPI.equals(a180));
-        //assertTrue (a180.equals(aPI));
-        //assertTrue (gon100.equals(a90));
-        //assertTrue (a90.equals(gon100));
-        //assertTrue (gon400.equals(a0));
-        //assertTrue (a0.equals(gon400));
-        //assertFalse (a0.equals(a45));
-        //assertFalse (a0.equals(new Angulo(0.01,Angulo.GRADOS)));
+        assertTrue (a180.equals(aPI));
+        assertTrue (gon100.equals(a90));
+        assertTrue (a90.equals(gon100));
+        assertTrue (gon400.equals(a0));
+        assertTrue (a0.equals(gon400));
+        assertFalse (a0.equals(a45));
+        assertFalse (a0.equals(new Angulo(0.01,Angulo.GRADOS)));
     }
 
     

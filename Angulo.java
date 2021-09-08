@@ -35,21 +35,44 @@ public class Angulo {
      * @return el valor del angulo en grados, 0 <= result < 360
      */
     public double grados () {
-        return 0.0;
+        if (tipo == Angulo.GRADOS) return valor;
+        else if (tipo == Angulo.RADIANES){
+            valor = valor*180 / Math.PI;
+            return valor;
+        }
+        else {
+            valor = valor*180 / 200;
+            return valor;
+        }
     }
-    
     /**Valor del angulo en radianes
      * @return el valor del angulo en radianes, 0 <= result < 2*PI
      */
     public double radianes () {
-        return 0.0;
+        if (tipo == Angulo.RADIANES) return valor;
+        else if (tipo == Angulo.GRADOS){
+            valor = valor * Math.PI / 180;
+            return valor;
+        }
+        else {
+            valor = valor * Math.PI / 200;
+            return valor;
+        }
     }
     
     /**Valor del angulo en gradianes
      * @return el valor del angulo en gradianes, 0 <= result < 400
      */
     public double gradianes () {
-        return 0.0;
+        if (tipo == Angulo.GRADIANES) return valor;
+        else if (tipo == Angulo.GRADOS){
+            valor = valor * 200 / 180;
+            return valor;
+        }
+        else{
+            valor = valor * 200 / Math.PI;
+            return valor;
+        }
     }
     
     /**
@@ -58,16 +81,29 @@ public class Angulo {
      * @return this + a
      */
     public Angulo sume (Angulo ang) {
-        return null;
+        if (this.tipo == ang.tipo){
+            this.valor += ang.valor;
+            return this;
+        }
+        else{
+            this.valor = this.grados() + ang.grados();
+            return this;
+        }
     }
-
     /**
      * Resta este angulo con otro. Retorna un nuevo angulo
      * @param a El angulo a sumar
      * @return this - a
      */
     public Angulo reste (Angulo a) {
-        return null;
+        if (this.tipo == a.tipo){
+            this.valor -= a.valor;
+            return this;
+        }
+        else{
+            this.valor = this.grados() - a.grados();
+            return this;
+        }
     }
 
     /**
@@ -76,7 +112,14 @@ public class Angulo {
      * @return this * a
      */
     public Angulo multiplique (Angulo ang) {
-        return null;
+        if (this.tipo == ang.tipo){
+            this.valor *= ang.valor;
+            return this;
+        }
+        else{
+            this.valor = this.grados() * ang.grados();
+            return this;
+        }
     }
 
     /**
@@ -85,7 +128,14 @@ public class Angulo {
      * @return this / a
      */
     public Angulo divida (Angulo a) {
-        return null;
+        if (this.tipo == a.tipo){
+            this.valor /= a.valor;
+            return this;
+        }
+        else{
+            this.valor = this.grados() / a.grados();
+            return this;
+        }
     }
     
     
@@ -95,7 +145,8 @@ public class Angulo {
      * @return r * this
      */
     public Angulo multiplique (double r) {
-        return null;
+        this.valor *= r;
+        return this;
     }
     
     /**
@@ -128,14 +179,16 @@ public class Angulo {
      * @return el seno de este angulo
      */
     public double seno () {
-        return 0.0;
+        valor = Math.sin(valor);
+        return valor;
     }
 
     /**Calcula el coseno
      * @return el coseno de este angulo
      */
     public double coseno () {
-        return 0.0;
+        valor = Math.cos(valor);
+        return valor;
     }
 
     /**
@@ -143,6 +196,8 @@ public class Angulo {
      * @return the information of this object
      */
     public String toString() {
-      return "";
+      valor = grados();
+      String s = String.valueOf(valor);
+      return s;
     }
 }
