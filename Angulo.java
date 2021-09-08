@@ -35,6 +35,7 @@ public class Angulo {
      * @return el valor del angulo en grados, 0 <= result < 360
      */
     public double grados () {
+        //System.out.println(valor);
         if (tipo == Angulo.GRADOS) return valor;
         else if (tipo == Angulo.RADIANES){
             valor = valor*180 / Math.PI;
@@ -162,6 +163,13 @@ public class Angulo {
                 else if(a.valor == 0) return true;
                 else if(a.valor == 720) return true;
             }
+            else{
+                return Math.abs(this.valor-a.valor) < MAXERROR;
+            }            
+        }
+        else{
+            this.valor = grados();
+            a.valor = grados();
             return Math.abs(this.valor-a.valor) < MAXERROR;
         }
         return false;

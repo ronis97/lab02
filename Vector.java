@@ -1,4 +1,4 @@
-
+import java.lang.Math;
 /**
  * @author ECI, 2017 v01 2021 v02
  *
@@ -9,6 +9,8 @@ public class Vector{
     
     private float r;
     private Angulo theta;
+    private float x;
+    private float y;
     
     /**
      * Constructor del vector, en coordenadas polares
@@ -16,6 +18,8 @@ public class Vector{
      * @param a angulo del vector
      */
     public Vector (float r, Angulo t) {
+        this.r = r;
+        this.theta = t;
     }
 
     /**
@@ -24,6 +28,8 @@ public class Vector{
      * @param y coordenada y del vector
      */
     public Vector (float x, float y) {
+        this.x = x;
+        this.y = y;
     }
     
     /**
@@ -31,7 +37,8 @@ public class Vector{
      * @return coordenada X del vector
      */
     public float coordenadaX() {
-        return 0.0f;
+        return this.r * (float)theta.coseno();
+    
     }
 
     /**
@@ -39,7 +46,7 @@ public class Vector{
      * @return coordenada Y del vector
      */
     public float coordenadaY() {
-        return 0.0f;
+        return this.r * (float)theta.seno();
     }
 
 
@@ -48,7 +55,7 @@ public class Vector{
      * @return angulo del vector
      */
     public Angulo angulo () {
-        return null;
+        return this.theta;
     }
 
 
@@ -57,7 +64,7 @@ public class Vector{
      * @return 
      */
     public float longitud() {
-        return 0.0f;
+        return this.r;
     }
     
     /**
@@ -65,7 +72,7 @@ public class Vector{
      * @return 
      */
     public float distancia(Vector otro) {
-        return 0.0f;
+        return (float) Math.sqrt(Math.pow((double)otro.x-this.x,2)-Math.pow((double)otro.y-this.y, 2));
     }
     
     /**
@@ -73,6 +80,7 @@ public class Vector{
      * @param v el vector a comparar con este
      */
     private boolean equals (Vector v) {
+        if (this.distancia(v) < MAXERROR) return true;
         return false;
     }
 
@@ -91,7 +99,9 @@ public class Vector{
      * @param dy desplazamiento en el eje Y
      */
     public Vector traslade (float dx, float dy) {
-        return null;
+        this.x += dx;
+        this.y += dy;
+        return this;
     }
     
     /**
@@ -100,7 +110,9 @@ public class Vector{
      * @return 
      */
     public Vector productoEscalar(float escalar) {
-        return null;
+        this.x *= escalar;
+        this.y *= escalar;
+        return this;
     }
 
     /**
@@ -109,19 +121,38 @@ public class Vector{
      * y la distancia es la misma.
      */
     public Vector rote(Angulo a) {
-        return null;
+        this.theta.sume(a);
+        return this;
     }
 
     public  Vector  sume(Vector v){
-        return null;
+        this.x = this.r * (float)theta.coseno();
+        this.y = this.r * (float)theta.seno();
+        v.x = v.r * (float)theta.coseno();
+        v.y = v.r * (float)theta.seno();
+        this.x += v.x;
+        this.y += v.y;
+        return this;
     }
     
     public Vector reste(Vector v){
-        return null;
+        this.x = this.r * (float)theta.coseno();
+        this.y = this.r * (float)theta.seno();
+        v.x = v.r * (float)theta.coseno();
+        v.y = v.r * (float)theta.seno();
+        this.x -= v.x;
+        this.y -= v.y;
+        return this;
     }
     
     public Vector multiplique(Vector v){
-        return null;
+        this.x = this.r * (float)theta.coseno();
+        this.y = this.r * (float)theta.seno();
+        v.x = v.r * (float)theta.coseno();
+        v.y = v.r * (float)theta.seno();
+        this.x *= v.x;
+        this.y *= v.y;
+        return this;
     }
     
     
@@ -132,6 +163,9 @@ public class Vector{
     @Override
     public String toString () {
           String s = "";
+          String sr = String.valueOf(r);
+          String stheta = theta.toString();
+          s += "("+ sr + ","+ stheta+ ")";
           return s;
     }
 

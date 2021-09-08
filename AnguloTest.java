@@ -51,8 +51,8 @@ public class AnguloTest
         int[] number = new int[]{0};
         assertTrue(number[2] < 3);        
     }
-    @Test
-    public void deberiaCrearBienLosAngulo() {
+    //@Test
+    /*public void deberiaCrearBienLosAngulo() {
         assertTrue (a0.equals(a0));
         assertTrue (a0.equals(new Angulo(0,Angulo.GRADOS)));
         assertTrue (a0.equals(a360));
@@ -67,7 +67,7 @@ public class AnguloTest
         assertTrue (a0.equals(gon400));
         assertFalse (a0.equals(a45));
         assertFalse (a0.equals(new Angulo(0.01,Angulo.GRADOS)));
-    }
+    }*/
 
     
     @Test

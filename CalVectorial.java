@@ -10,15 +10,18 @@ public class CalVectorial{
     private HashMap<String,Vector> operandos;
     
     public CalVectorial(){
+        
     }
 
     //Crea una nueva variable de memoria
     public void defina(String nombre){
+        operandos.put(nombre, null);
     }
      
     //Asigna una constante a una variable
     //a := P(longitud, grados)  La variable debe estar definida
     public void asigne(String a, float longitud, float grados ){
+        //operandos
     }    
     
     //Asigna el resultado de una operacion unaria a una varible
